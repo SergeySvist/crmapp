@@ -1,0 +1,19 @@
+{
+    "name": "silver/8_crm_app",
+    "require": {
+        "larapack/dd": "^1.1",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "./Core",
+            "App\\": "./app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vladimir Serebrianskiy",
+            "email": "silver.itstep@gmail.com"
+        }
+    ]
+}
