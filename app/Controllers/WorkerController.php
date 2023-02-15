@@ -64,7 +64,6 @@ class WorkerController
         $data = json_decode(file_get_contents('php://input'), true);
 
         // TODO: validation
-        // todo: get id and send in response
         $id = Worker::create($data)->save();
 
         echo $id;

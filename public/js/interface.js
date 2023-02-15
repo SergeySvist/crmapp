@@ -131,19 +131,18 @@ export async function workerHandler(e) {
 
         const button = e.target.tagName === 'BUTTON' ? e.target : e.target.parentElement;
         const action = button.dataset.action;
-
+        let response ;
         try {
             switch (action)
             {
                 case 'edit':
-                    let response = await Fetches.fetchGetWorker(workerId);
+                    response = await Fetches.fetchGetWorker(workerId);
                     const worker = await response.json();
                     showModal(worker);
                     break;
                 case 'delete':
                     response = await Fetches.fetchDeleteWorker(workerId);
 
-                    console.log(response)
                     if (response.status === 203) {
                         deleteTableRow(workerId);
                         showToast();

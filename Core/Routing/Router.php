@@ -80,8 +80,7 @@ class Router
                         return;
                     }
                     //api
-                    if(User::checkExists(["token" => $_SERVER['HTTP_USER_TOKEN_KEY']])){
-                        file_put_contents('test.txt', 1);
+                    if($_SERVER['HTTP_USER_TOKEN_KEY'] && User::checkExists(["token" => $_SERVER['HTTP_USER_TOKEN_KEY']])){
                         $this->executeAction($route);
                         return;
                     }
